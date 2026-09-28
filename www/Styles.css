@@ -14,9 +14,10 @@ body{
     display: none;
 }
 
-.page1{
+.page{
 
     border: transparent;
+    overflow-x: hidden;
 }
 
 .page h1{
