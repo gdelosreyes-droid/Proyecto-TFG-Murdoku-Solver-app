@@ -9,6 +9,11 @@ body{
     box-sizing: border-box;
 }
 
+.hidden{
+
+    display: none;
+}
+
 .page1{
 
     border: transparent;
@@ -19,8 +24,9 @@ body{
     color: white;
     text-align: center;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    margin-top: 40%;
+    margin-top: 20%;
     font-size: 50px;
+    font-weight: bold;
 }
 
 .page1 p{
@@ -28,7 +34,20 @@ body{
     color: white;
     text-align: justify;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    margin-top: 40%;
+    margin-top: 30%;
     font-size: 25px;
     padding: 10px;
+}
+
+.button{
+
+    margin-top: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    color: white;
+    border: 1px solid white;
+    border-radius: 40px;
+    height: 70px;
 }
