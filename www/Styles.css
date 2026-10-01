@@ -9,16 +9,14 @@ body{
     box-sizing: border-box;
 }
 
-.hidden{
-
-    display: none;
-}
 
 .page{
 
+    display: none;
     border: transparent;
     overflow-x: hidden;
 }
+
 
 .page h1{
 
@@ -67,5 +65,64 @@ body{
         transform: translateX(0);
         opacity: 1;
     }
+}
+
+.page2{
+
+    border: transparent;
+    overflow-x: hidden;
+}
+.page2 h1{
+
+    color: white;
+    text-align: center;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-top: 10%;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.page2 p{
+
+    color: white;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 18px;
+    padding: 15px;
+    margin-top: 5%;
+    text-align: justify;
+}
+
+.page2 ol{
+
+    color: white;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 18px;
+    padding-left: 15%;
+}
+
+.animation{
+
+    animation: upToDown 3s ease-in-out forwards;
+}
+
+@keyframes upToDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.active{
+
+    display: block;
+}
+.hidden{
+
+    display: none;
 }
 
