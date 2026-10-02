@@ -116,8 +116,45 @@ body{
     }
 }
 
+.page3{
+
+    border: transparent;
+    overflow-x: hidden;
+}
+.button-page2{
+
+    margin-top: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    color: black;
+    background-color: rgb(255, 255, 255);
+    border-radius: 40px;
+    height: 70px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.animationButton{
+
+    animation: DownToUp 3s ease-in-out forwards;
+}
+
+@keyframes DownToUp {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
 .hidden{
 
     display: none;
 }
+
 

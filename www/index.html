@@ -8,16 +8,16 @@
 </head>
 <body>
     <!--Welcome to APP-->
-    <div id = "welcome" class = "page">
+    <div id = "welcome" class = "page screen">
         <h1>Bienvenido a Murdoku Solver</h1>
         <p>A continuación le explicaremos toda la información a seguir para utilizar la APP
             de manera correcta y segura. Haga click en (información APP) para ver las instrucciones
         </p>
-        <div id = "button-page1"class = "button" onclick="showInfo('info')">Información APP</div>
+        <div id = "button-page1" class = "button" onclick="showPage('info')">Información APP</div>
     </div>
 
     <!-- Information page -->
-    <div id = "info" class = "page2 hidden">
+    <div id = "info" class = "page2 screen hidden">
         <h1>Información sobre la APP</h1>
         <p>Esta es la información sobre la APP de Murdoku Solver. Esta aplicación es una automatización de la solución
             de puzzles de Murdoku. Consistirá en escanear las pistas y el tablero de su libro Murdoku y la aplicación le dará
@@ -26,11 +26,18 @@
         <ol>
             <li>Tener comprado el libro Murdoku</li>
             <li>Darle permisos a la cámara del móvil</li>
+            <li>Las fotos deben de ser claras y bien iluminadas</li>
         </ol>
         <p>
             Recuerde usar esta aplicación con responsabilidad y no hacer trampas en los puzzles. Esta aplicación es solo para ayudarle 
             a resolver los puzzles de manera más rápida y eficiente y conocer la lógica que hay dentro de ellos.
         </p>
+        <div class = "button-page2" onclick="showPage('main')">Ir a la aplicacíon</div>
+    </div>
+
+    <!-- Main page -->
+    <div id = "main" class = "page3 screen hidden">
+        
     </div>
 </body>
 <script src = "Functions.js"></script>
