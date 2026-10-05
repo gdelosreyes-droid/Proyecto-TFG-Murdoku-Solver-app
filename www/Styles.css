@@ -156,7 +156,7 @@ body{
 
 .page3 div{
 
-    height: 701px;
+    height: 715px;
     position: relative;
     background-color: black;
 }
@@ -168,6 +168,9 @@ body{
     height: 300px;
     object-fit: contain;
     object-position: center top;
+    background-color: #060612;
+    filter: brightness(0.85) contrast(1.1);
+    
 }
 
 .title{
@@ -181,7 +184,7 @@ body{
 
 .body-page3-transition{
 
-    background-color: black;
+    background-color: #04040E;
 }
 
 
