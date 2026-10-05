@@ -24,3 +24,24 @@ boton.addEventListener('click', () => {
     list.classList.add('animation');
     button.classList.add('animationButton');
 });
+
+// Function to add animation to the elements of the third page
+
+let boton2 = document.getElementById("button-pag2");
+
+boton2.addEventListener('click', () => {
+
+    let image = document.getElementById("app-image");
+    let cargar = document.querySelector(".page3 div");
+    let body = document.body;
+    
+    cargar.classList.remove('hidden');
+    image.classList.add("hidden");
+
+    setTimeout(() => {
+
+        cargar.classList.add("hidden");
+        image.classList.remove("hidden");
+        body.classList.add('body-page3-transition');
+    }, 2000);
+});

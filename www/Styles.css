@@ -70,6 +70,7 @@ body{
 
     border: transparent;
     overflow-x: hidden;
+    overflow-y: hidden;
 }
 .page2 h1{
 
@@ -120,6 +121,7 @@ body{
 
     border: transparent;
     overflow-x: hidden;
+    color: white;
 }
 .button-page2{
 
@@ -151,6 +153,37 @@ body{
         opacity: 1;
     }
 }
+
+.page3 div{
+
+    height: 701px;
+    position: relative;
+    background-color: black;
+}
+
+.page3 img{
+
+    padding-top: 5%;
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+    object-position: center top;
+}
+
+.title{
+
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.body-page3-transition{
+
+    background-color: black;
+}
+
 
 .hidden{
 
