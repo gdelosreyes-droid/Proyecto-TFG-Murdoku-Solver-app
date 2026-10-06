@@ -156,9 +156,10 @@ body{
 
 .page3 div{
 
-    height: 715px;
+    height: 728px;
     position: relative;
     background-color: black;
+    overflow: hidden;
 }
 
 .page3 img{

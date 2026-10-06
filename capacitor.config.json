@@ -1,5 +1,9 @@
 {
   "appId": "Murdoku.app",
   "appName": " Murdoku Solver",
-  "webDir": "www"
+  "webDir": "www",
+  "bundledWebRuntime": false,
+  "ios": {
+    "limitsNavigationsToAppBoundDomains": false
+  }
 }
