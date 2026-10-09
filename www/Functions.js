@@ -32,16 +32,33 @@ let boton2 = document.getElementById("button-pag2");
 boton2.addEventListener('click', () => {
 
     let image = document.getElementById("app-image");
-    let cargar = document.querySelector(".page3 div");
+    let cargar = document.querySelector(".loader-container");
     let body = document.body;
+    let title = document.getElementById("page3-title");
+    let images = document.querySelector(".addImages");
     
     cargar.classList.remove('hidden');
     image.classList.add("hidden");
+    images.classList.add('hidden');
+    title.classList.add('animation-disappearing');
+    
+    setInterval(() => {
+        if (title.classList.contains('animation-disappearing')) {
 
+            title.classList.remove('animation-disappearing');
+            title.classList.add('animation-appearing');
+        }
+        else{
+
+            title.classList.add('animation-disappearing');
+        }
+    }, 1000);
     setTimeout(() => {
-
+        
         cargar.classList.add("hidden");
         image.classList.remove("hidden");
         body.classList.add('body-page3-transition');
-    }, 2000);
+        images.classList.remove('hidden');
+
+    }, 6000);
 });

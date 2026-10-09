@@ -154,7 +154,7 @@ body{
     }
 }
 
-.page3 div{
+.loader-container{
 
     height: 728px;
     position: relative;
@@ -192,7 +192,52 @@ body{
 
 .hidden{
 
-    display: none;
+    display: none !important;
+}
+
+@keyframes appearing {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes disappearing {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+.animation-appearing {
+    animation: appearing 1s ease-in-out forwards;
+}
+.animation-disappearing {
+    animation: disappearing 1s ease-in-out forwards;
+}
+
+.addImages{
+
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    margin-top: 10%;
+    height: auto;
+    padding: 0 10px 0 10px;
+}
+.addImages div{
+
+    width: 50%;
+    border-radius: 30px;
+    height: 30vh;
+    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    background-color: rgba(104, 112, 123, 0.146);
 }
 
 
