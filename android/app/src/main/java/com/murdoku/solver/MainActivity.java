@@ -1,4 +1,4 @@
-package Murdoku.app;
+package com.murdoku.solver;
 
 import com.getcapacitor.BridgeActivity;
 
