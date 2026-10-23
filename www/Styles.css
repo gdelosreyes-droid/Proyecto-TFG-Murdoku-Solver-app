@@ -227,17 +227,19 @@ body{
     height: auto;
     padding: 0 10px 0 10px;
 }
-.addImages div{
+.plus{
 
     width: 50%;
     border-radius: 30px;
     height: 30vh;
     border: 1px solid white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     font-size: 50px;
     background-color: rgba(104, 112, 123, 0.146);
+}
+.plus p{
+
+    text-align: center;
+    margin-top: 40%;
 }
 
 .button-camera{
@@ -255,6 +257,39 @@ body{
     font-weight: bold;
     gap: 10px;
 }
+.images{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    background-color: white;
+    color: black;
+    border-radius: 40px;
+    margin-right: 10px;
+    margin-left: 10px;
+    height: 30px;
+    margin-top: 20%;
+    font-weight: bold;
+}
+
+.solve-puzzle{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3%;
+    margin-right: 10px;
+    margin-left: 10px;
+    background-color: rgb(160, 160, 40);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: black;
+    border-radius: 40px;
+    font-size: 25px;
+    font-weight: bold;
+    height: 70px;
+}
+
 
 
 
