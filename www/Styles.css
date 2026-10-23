@@ -240,4 +240,21 @@ body{
     background-color: rgba(104, 112, 123, 0.146);
 }
 
+.button-camera{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15%;
+    font-size: 25px;
+    border-radius: 40px;
+    background-color: rgb(15, 95, 235);
+    margin-right: 10px;
+    margin-left: 10px;
+    height: 70px;
+    font-weight: bold;
+    gap: 10px;
+}
+
+
 

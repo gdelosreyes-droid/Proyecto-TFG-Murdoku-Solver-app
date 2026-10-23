@@ -31,17 +31,23 @@ let boton2 = document.getElementById("button-pag2");
 
 boton2.addEventListener('click', () => {
 
+    //List of elements of third page
+    
     let image = document.getElementById("app-image");
     let cargar = document.querySelector(".loader-container");
     let body = document.body;
     let title = document.getElementById("page3-title");
     let images = document.querySelector(".addImages");
+    let button_camera = document.querySelector(".button-camera")
     
     cargar.classList.remove('hidden');
     image.classList.add("hidden");
     images.classList.add('hidden');
     title.classList.add('animation-disappearing');
+    button_camera.classList.add('hidden');
     
+    //Function to animate loader page
+
     setInterval(() => {
         if (title.classList.contains('animation-disappearing')) {
 
@@ -53,12 +59,16 @@ boton2.addEventListener('click', () => {
             title.classList.add('animation-disappearing');
         }
     }, 1000);
+
+    //Function to dissapear loader page and appear third page
+
     setTimeout(() => {
         
         cargar.classList.add("hidden");
         image.classList.remove("hidden");
         body.classList.add('body-page3-transition');
         images.classList.remove('hidden');
+        button_camera.classList.remove('hidden');
 
     }, 6000);
 });
