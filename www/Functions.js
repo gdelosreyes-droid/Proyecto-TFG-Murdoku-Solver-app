@@ -72,3 +72,89 @@ boton2.addEventListener('click', () => {
 
     }, 6000);
 });
+
+let streamCamara = null;
+let bloqueDestino = null; // Almacenará la caja gris (.plus) que capturará la foto
+
+const btnCamara = document.getElementById('btn-camera');
+const btnPistas = document.getElementById('btn-pistas');
+const btnPuzzle = document.getElementById('btn-puzzle');
+
+// Configuration to force front of camera in phone
+const opcionesCamara = { video: { facingMode: "user" }, audio: false };
+
+// 1. Permissions of camera
+btnCamara.addEventListener('click', async () => {
+    try {
+        // Alert to camera permissions in android
+        const streamTemporal = await navigator.mediaDevices.getUserMedia(opcionesCamara);
+        
+        // Accept permissions: Apagamos el hardware inmediatamente
+        streamTemporal.getTracks().forEach(track => track.stop());
+
+        // Activamos únicamente el botón de pistas (removiendo el estado inactivo)
+        btnPistas.classList.remove('inactive-button');
+        
+        btnCamara.textContent = "✓ Permiso concedido";
+
+    } catch (error) {
+        alert("Debes aceptar los permisos para poder usar la cámara.");
+    }
+});
+
+// 2. Function to switch on frontal camera inside the .plus block
+async function encenderCamaraEnBloque(evento) {
+    // Localizamos el contenedor gris .plus en el que se hizo click (Añadir pistas)
+    bloqueDestino = evento.target.closest('.plus');
+
+    try {
+        streamCamara = await navigator.mediaDevices.getUserMedia(opcionesCamara);
+        
+        // Limpiamos por completo el signo '+' y el botón interno para meter el video en vivo
+        bloqueDestino.innerHTML = `
+            <div class="camara-box">
+                <video id="stream-vivo" autoplay playsinline></video>
+                <div class="btn-disparo" id="disparador-foto">📸 Foto</div>
+            </div>
+        `;
+
+        // Pasamos la señal del stream al reproductor de video recién creado
+        const videoElement = document.getElementById('stream-vivo');
+        videoElement.srcObject = streamCamara;
+
+        // Asignamos la acción al nuevo botón flotante de disparo
+        document.getElementById('disparador-foto').addEventListener('click', capturarFotograma);
+
+    } catch (error) {
+        alert("No se pudo conectar a la cámara frontal.");
+    }
+}
+
+// 3. Function to freeze frame (take photo) and close camera
+function capturarFotograma() {
+    const videoElement = document.getElementById('stream-vivo');
+    
+    const canvasVirtual = document.createElement('canvas');
+    canvasVirtual.width = videoElement.videoWidth;
+    canvasVirtual.height = videoElement.videoHeight;
+    
+    const contexto = canvasVirtual.getContext('2d');
+    
+    contexto.translate(canvasVirtual.width, 0);
+    contexto.scale(-1, 1);
+    contexto.drawImage(videoElement, 0, 0, canvasVirtual.width, canvasVirtual.height);
+    
+    const fotoTemporalUrl = canvasVirtual.toDataURL('image/jpeg');
+
+    if (streamCamara) {
+        streamCamara.getTracks().forEach(track => track.stop());
+    }
+    bloqueDestino.innerHTML = `<img src="${fotoTemporalUrl}" class="foto-resultado" alt="Captura Murdoku">`;
+}
+
+// 4. Assign button action only to btnPistas
+btnPistas.addEventListener('click', (e) => {
+    if (!btnPistas.classList.contains('inactive-button')) {
+        encenderCamaraEnBloque(e);
+    }
+});
